@@ -1,0 +1,20 @@
+[Dd]ebug/
+[Rr]elease/
+[Oo]bj/
+[Bb]in/
+[Pp]ackages/
+.gitk
+*.suo
+*.sln.cache
+*.vssscc
+*.vspscc
+*.vskdb
+*.vsksln
+*.vsmdi
+*.rdl.data
+*.user
+*.mdf
+*.ldf
+Visual Studio*/
+*.stackdump
+*~
