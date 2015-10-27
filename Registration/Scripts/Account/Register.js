@@ -1,8 +1,8 @@
 ﻿$(function () {
 
-    $('#GoToStep2').click(function () {
-        $('#Step1').addClass('hidden');
-        $('#Step2').removeClass('hidden');
+    $('#goToStep2').click(function () {
+        $('#step1').addClass('hidden');
+        $('#step2').removeClass('hidden');
     });
 
 });
