@@ -998,6 +998,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Registration.DataModel\Registration.DataModel.csproj">
+      <Project>{ee10a254-413c-4fa2-ac7b-4d1c46267c27}</Project>
+      <Name>Registration.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Registration.Entities\Registration.Entities.csproj">
+      <Project>{6f5a68aa-d915-434d-9c2f-65311ced32ea}</Project>
+      <Name>Registration.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
