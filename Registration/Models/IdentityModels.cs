@@ -21,7 +21,7 @@ namespace Registration.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("RegistrationConnection", throwIfV1Schema: false)
         {
         }
 

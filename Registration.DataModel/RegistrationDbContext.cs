@@ -10,6 +10,11 @@ namespace Registration.DataModel
 {
     public class RegistrationDbContext : DbContext
     {
+        public RegistrationDbContext()
+            : base("RegistrationConnection")
+        {
+        }
+
         public DbSet<Country> Countries { get; set; }
         public DbSet<Province> Provinces { get; set; }
     }
