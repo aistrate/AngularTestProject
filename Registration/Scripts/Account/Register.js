@@ -1,8 +1,10 @@
-﻿$(function () {
+﻿angular.module('accountRegister', [])
+    .controller('RegisterController', function () {
+        var register = this;
 
-    $('#goToStep2').click(function () {
-        $('#step1').addClass('hidden');
-        $('#step2').removeClass('hidden');
+        register.step = 1;
+
+        register.goToStep2 = function () {
+            register.step = 2;
+        };
     });
-
-});
