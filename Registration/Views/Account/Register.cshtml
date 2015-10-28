@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Registration.Entities.Country>
+
+@{
     ViewBag.Title = "Register";
 }
 
@@ -76,10 +78,10 @@
             </div>
             <div class="col-sm-8">
                 <select class="form-control">
-                    <option>Select country</option>
-                    <option>France</option>
-                    <option>Germany</option>
-                    <option>Netherlands</option>
+                    <option value="0">Select country</option>
+                    @foreach (var country in Model) {
+                        <option value="@country.Id">@country.Name</option>
+                    }
                 </select>
             </div>
         </div>
