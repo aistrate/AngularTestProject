@@ -1,31 +1,30 @@
 namespace Registration.DataModel.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Registration.Entities;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Registration.DataModel.RegistrationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<RegistrationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Registration.DataModel.RegistrationDbContext context)
+        protected override void Seed(RegistrationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var countries = new List<Country>
+            {
+                new Country { Name = "Netherlands" },
+                new Country { Name = "Italy" },
+                new Country { Name = "Spain" },
+            };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Countries.AddOrUpdate(c => c.Name, countries.ToArray());
+            context.SaveChanges();
         }
     }
 }
