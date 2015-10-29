@@ -79,7 +79,7 @@
                     <label for="">Country</label>
                 </div>
                 <div class="col-sm-8">
-                    <select class="form-control" ng-model="register.country" ng-change="register.countryChanged()">
+                    <select class="form-control" ng-model="register.user.country" ng-change="register.countryChanged()">
                         <option value="0">Select country</option>
                         @foreach (var country in Model)
                         {
@@ -94,7 +94,7 @@
                     <label for="">Province</label>
                 </div>
                 <div class="col-sm-8">
-                    <select class="form-control" ng-model="register.province">
+                    <select class="form-control" ng-model="register.user.province">
                         <option ng-repeat="province in register.provinces" value="{{province.Id}}">{{province.Name}}</option>
                     </select>
                 </div>
