@@ -4,10 +4,6 @@
 
         register.step = 1;
 
-        register.goToStep2 = function () {
-            register.step = 2;
-        };
-
         var emptyProvinceList = function () {
             register.provinces = [{
                 Id: 0,
