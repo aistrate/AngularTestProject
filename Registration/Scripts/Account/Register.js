@@ -43,7 +43,6 @@
                 var user = {
                     email: register.user.login || '',
                     password: register.user.password || '',
-                    agree: !!register.user.agree, // force to boolean
                     countryId: parseInt(register.user.countryId) || 0,
                     provinceId: parseInt(register.user.provinceId) || 0
                 };
