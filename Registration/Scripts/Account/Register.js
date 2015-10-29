@@ -34,4 +34,8 @@
                     });
             }
         };
+
+        register.save = function () {
+            window.console.log(JSON.stringify(register.user));
+        };
     });
