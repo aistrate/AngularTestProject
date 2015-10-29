@@ -58,9 +58,12 @@
                 <div class="col-sm-offset-4 col-sm-8">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="agree" name="agree" ng-model="register.user.agree" value="" />
+                            <input type="checkbox" id="agree" name="agree" ng-model="register.user.agree" value="" required />
                             Agree to work for food
                         </label>
+                        <div ng-messages="step1Form.agree.$error" ng-if="register.showStep1Val" ng-cloak>
+                            <div ng-message="required">You must agree to work for food.</div>
+                        </div>
                     </div>
                 </div>
             </div>
