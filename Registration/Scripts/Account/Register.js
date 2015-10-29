@@ -48,8 +48,8 @@
                 $http.post('/api/Account/Register', user)
                     .then(function (response) {
                         window.console.log(JSON.stringify(response));
-                    }, function (reason) {
-                        window.console.log(JSON.stringify('ERROR: ' + reason));
+                    }, function (response) {
+                        window.console.log('ERROR: ' + JSON.stringify(response.data));
                     });
             }
         };
