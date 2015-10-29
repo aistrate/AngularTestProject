@@ -30,7 +30,6 @@
                 countryId: parseInt(register.user.countryId),
                 provinceId: parseInt(register.user.provinceId)
             };
-            //window.console.log(JSON.stringify(model));
 
             $http.post('/api/Account/Register', model)
                 .then(function (response) {
