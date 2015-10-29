@@ -4,6 +4,17 @@
 
         register.step = 1;
 
+        register.showStep1Val = false;
+        register.showStep2Val = false;
+
+        register.goToStep2 = function (isValidForm) {
+            register.showStep1Val = true;
+
+            if (isValidForm) {
+                register.step = 2;
+            }
+        };
+
         register.user = {};
 
         register.user.countryId = '0';

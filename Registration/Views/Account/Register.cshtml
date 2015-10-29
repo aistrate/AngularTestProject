@@ -8,11 +8,11 @@
     <script src="~/Scripts/Account/Register.js"></script>
 }
 
-<form ng-app="accountRegister" name="registerForm" novalidate>
+<div ng-app="accountRegister">
 
     <div ng-controller="RegisterController as register">
 
-        <div ng-show="register.step == 1" class="form-horizontal">
+        <form name="step1Form" ng-show="register.step == 1" class="form-horizontal" novalidate>
 
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
@@ -25,7 +25,8 @@
                     <label for="Login">Login</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" id="login" name="login" ng-model="register.user.login" class="form-control" />
+                    <input type="text" id="login" name="login" ng-model="register.user.login" class="form-control" required />
+                    <div ng-if="register.showStep1Val" ng-cloak ng-show="step1Form.login.$error.required">Login is a required field.</div>
                 </div>
             </div>
 
@@ -60,13 +61,13 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
-                    <button type="button" ng-click="register.step = 2" class="btn btn-default">Go to step 2</button>
+                    <button type="button" ng-click="register.goToStep2(step1Form.$valid)" class="btn btn-default">Go to step 2</button>
                 </div>
             </div>
 
-        </div>
+        </form>
 
-        <div ng-show="register.step == 2" ng-cloak class="form-horizontal">
+        <form name="step2Form" ng-show="register.step == 2" ng-cloak class="form-horizontal" novalidate>
 
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
@@ -107,8 +108,8 @@
                 </div>
             </div>
 
-        </div>
+        </form>
 
     </div>
 
-</form>
+</div>
