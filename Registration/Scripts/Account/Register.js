@@ -7,6 +7,8 @@
         register.showStep1Val = false;
         register.showStep2Val = false;
 
+        register.errorMessages = [];
+
         register.goToStep2 = function (isValidForm) {
             register.showStep1Val = true;
 
@@ -35,6 +37,7 @@
 
         register.save = function (isValidForm) {
             register.showStep2Val = true;
+            register.errorMessages = [];
 
             if (isValidForm) {
                 var user = {
@@ -49,7 +52,12 @@
                     .then(function (response) {
                         window.console.log(JSON.stringify(response));
                     }, function (response) {
-                        window.console.log('ERROR: ' + JSON.stringify(response.data));
+                        var modelState = response.data.ModelState;
+                        var errorMessages = [];
+                        for (var key in modelState) {
+                            errorMessages = errorMessages.concat(modelState[key]);
+                        }
+                        register.errorMessages = errorMessages;
                     });
             }
         };
