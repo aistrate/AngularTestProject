@@ -23,6 +23,6 @@ textarea {
     max-width: 280px;
 }
 
-.val-error {
+[ng-messages] {
     color: #a94442;
 }

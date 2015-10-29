@@ -20,7 +20,8 @@ namespace Registration
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                        "~/Scripts/angular.js"));
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-messages.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",

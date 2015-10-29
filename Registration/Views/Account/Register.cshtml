@@ -26,7 +26,9 @@
                 </div>
                 <div class="col-sm-8">
                     <input type="text" id="login" name="login" ng-model="register.user.login" class="form-control" required />
-                    <div ng-if="register.showStep1Val" ng-cloak ng-show="step1Form.login.$error.required" class="val-error">Login is a required field.</div>
+                    <div ng-messages="step1Form.login.$error" ng-if="register.showStep1Val" ng-cloak>
+                        <div ng-message="required">The Login field is required.</div>
+                    </div>
                 </div>
             </div>
 

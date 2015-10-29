@@ -1,4 +1,4 @@
-﻿angular.module('accountRegister', [])
+﻿angular.module('accountRegister', ['ngMessages'])
     .controller('RegisterController', function ($http) {
         var register = this;
 
