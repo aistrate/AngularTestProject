@@ -4,8 +4,6 @@ using Newtonsoft.Json;
 
 namespace Registration.Models
 {
-    // Models used as parameters to AccountApiController actions.
-
     public class RegisterBindingModel
     {
         [Required]
