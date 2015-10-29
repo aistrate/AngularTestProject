@@ -23,13 +23,20 @@
         };
 
         register.save = function () {
-            var user = {
-                login: register.user.login || '',
+            var model = {
+                email: register.user.login || '',
                 password: register.user.password || '',
                 agree: !!register.user.agree, // force to boolean
                 countryId: parseInt(register.user.countryId),
                 provinceId: parseInt(register.user.provinceId)
             };
-            window.console.log(JSON.stringify(user));
+            //window.console.log(JSON.stringify(model));
+
+            $http.post('/api/Account/Register', model)
+                .then(function (response) {
+                    window.console.log(JSON.stringify(response));
+                }, function (reason) {
+                    window.console.log(JSON.stringify('ERROR: ' + reason));
+                });
         };
     });
