@@ -23,6 +23,13 @@
         };
 
         register.save = function () {
-            window.console.log(JSON.stringify(register.user));
+            var user = {
+                login: register.user.login || '',
+                password: register.user.password || '',
+                agree: !!register.user.agree, // force to boolean
+                countryId: parseInt(register.user.countryId),
+                provinceId: parseInt(register.user.provinceId)
+            };
+            window.console.log(JSON.stringify(user));
         };
     });
