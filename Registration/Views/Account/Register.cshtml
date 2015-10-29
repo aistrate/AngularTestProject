@@ -95,6 +95,7 @@
                 </div>
                 <div class="col-sm-8">
                     <select class="form-control" ng-model="register.user.provinceId">
+                        <option value="0">{{register.user.countryId == '0' ? 'Please select country first' : 'Select province'}}</option>
                         <option ng-repeat="province in register.provinces" value="{{province.Id}}">{{province.Name}}</option>
                     </select>
                 </div>
