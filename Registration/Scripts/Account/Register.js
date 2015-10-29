@@ -23,7 +23,7 @@
         };
 
         register.save = function () {
-            var model = {
+            var user = {
                 email: register.user.login || '',
                 password: register.user.password || '',
                 agree: !!register.user.agree, // force to boolean
@@ -31,7 +31,7 @@
                 provinceId: parseInt(register.user.provinceId)
             };
 
-            $http.post('/api/Account/Register', model)
+            $http.post('/api/Account/Register', user)
                 .then(function (response) {
                     window.console.log(JSON.stringify(response));
                 }, function (reason) {
