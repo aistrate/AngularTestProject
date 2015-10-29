@@ -20,7 +20,7 @@ namespace Registration.Controllers
         // GET: api/Countries
         public IQueryable<Country> GetCountries()
         {
-            return db.Countries;
+            return db.Countries.OrderBy(c => c.Name);
         }
 
         // GET: api/Countries/5
@@ -46,7 +46,7 @@ namespace Registration.Controllers
                 return NotFound();
             }
 
-            return Ok(country.Provinces);
+            return Ok(country.Provinces.OrderBy(p => p.Name));
         }
 
         protected override void Dispose(bool disposing)
