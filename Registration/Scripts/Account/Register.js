@@ -1,5 +1,5 @@
 ﻿angular.module('accountRegister', ['ngMessages'])
-    .controller('RegisterController', function ($http) {
+    .controller('RegisterController', function ($http, $window) {
         var register = this;
 
         register.step = 1;
@@ -49,7 +49,7 @@
 
                 $http.post('/api/Account/Register', user)
                     .then(function (response) {
-                        window.console.log(JSON.stringify(response));
+                        $window.location.href = '/Home';
                     }, function (response) {
                         var modelState = response.data.ModelState;
                         var errorMessages = [];
