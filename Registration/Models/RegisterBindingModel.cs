@@ -14,9 +14,6 @@ namespace Registration.Models
         public string Password { get; set; }
 
         [Required]
-        public int CountryId { get; set; }
-
-        [Required]
         public int ProvinceId { get; set; }
     }
 }
